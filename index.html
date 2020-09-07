@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<title>Blur Change</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<meta name="apple-mobile-web-app-title" content="Blur Change"/>
+
+<style type="text/css">
+html, body{
+  text-align: center;
+  background-color: #fafafa;
+  font-size: 20px;
+  color: #333;
+}
+</style>
+<script>
+$(function(){
+  var t = $('#img')[0];
+  t.style['-ms-filter'] = 'blur(100px)';
+  t.style['filter'] = 'blur(100px)';
+});
+
+function changeBlur(){
+  var b = $('#rng').val();
+  var t = $('#img')[0];
+  t.style['-ms-filter'] = 'blur(' + b + 'px)';
+  t.style['filter'] = 'blur(' + b + 'px)';
+}
+</script>
+</head>
+<body>
+
+<div class="container">
+  <img id="img" src="https://1.bp.blogspot.com/-anFajTcy3CM/XxU0nhH2UyI/AAAAAAABaOA/Fovyifhdjvs8HRvHhNZrOWXEDcTN1_E5gCNcBGAsYHQ/s450/school_blazer_girl_necktie.png" width="80%"/>
+  <br/>
+  <input id="rng" type="range" value="100" min="0" max="100" step="5" oninput="changeBlur()" width="100%"/>
+</div>
+
+</body>
+</html>
